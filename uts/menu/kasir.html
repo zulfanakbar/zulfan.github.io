@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+ <style>
+    .tengah{
+      background-image:url(background.png);
+      background-position:center;
+      width:auto;
+      height:auto;
+    }
+  
+    table{
+      background: navajowhite;
+      margin:auto;
+    }
+
+</style>
+</head>
+<body class="tengah">
+  <div>
+    <table border="1">
+    <h1 align="center" style="background: khaki">Pemesanan</h1>
+    <tr>    
+    <th>No Meja</th>
+    <th><input type="number"  no="no" onchange="total()" ></th>
+    </tr>
+    <tr>    
+    <th>Nama</th>
+    <th><input type="text"  id="nama" onchange="total()" ></th>
+    </tr>
+    <th>Status Pembeli</th>
+      <th><input type="radio" id="status_pembeli" name="status_pembeli" value="Member" required>&nbsp;<label>Member</label>
+      <input type="radio" id="status_pembeli" name="status_pembeli" value="Non Member" required>&nbsp; <label>Non Member</label></th>
+      <br>
+    <tr>    
+    <th>Nama Order Pizza</th>
+    <th><select id="Pizza" onchange="total()">
+        <option value="Super Supreme">Super Supreme (Rp. 100.000)
+		<option value="Frankfruerter BBQ">Frankfruerter BBQ (Rp. 110.000)</option>
+		<option value="Pepperoni">Pepperoni (Rp. 105.000)</option>
+        <option value="Meat Lovers">Meat Lovers (Rp. 120.000)</option>
+		<option value="American Favourite">American Favourite (Rp. 99.000)</option>
+    </select></th>
+    </tr>
+    <tr>    
+    <th>Jumlah Order</th>    
+    <th><input type="number" id="jumlah_order"  value="0" onchange="total()"></th>
+    </tr>
+    <tr>  
+	<th>Nama Order Pasta & Rice</th>
+    <th><select id="Pasta & Rice" onchange="total()">
+        <option value="Black Pepper Beef">Black Pepper Beef (Rp. 48.000)</option>
+		<option value="Creamy Beef">Creamy Beef (Rp. 45.000)</option>
+		<option value="Tuna Aglio Olio">Tuna Aglio Olio (Rp. 52.000)</option>
+		<option value="Oriental Chicken Spaghetti">Oriental Chicken Spaghetti (Rp. 50.000)</option>
+		<option value="Chicken Maryland Rice">Chicken Maryland Rice (Rp. 60.000)</option>
+		<option value="Thai Chicken Rice">Thai Chicken Rice(Rp. 58.000)</option>
+		<option value="Black Pepper Chicken Rice">Black Pepper Chicken Rice (Rp. 55.000)</option>
+	</select></th>
+    </tr>
+    <tr>    
+    <th>Jumlah Order</th>    
+    <th><input type="number" id="jumlah_order"  value="0" onchange="total()"></th>
+    </tr>
+    <tr>  
+    <th>Drinks</th>
+    <th><select id="Drinks" onchange="total()">
+        <option value="Avocado Juice">Avocado Juice (Rp. 28.000)</option>
+        <option value="Green Tea Yakult">Green Tea Yakult (Rp. 22.000)</option>
+        <option value="Mocha Float">Mocha Float (Rp. 22.000)</option>
+        <option value="Tropical Punch">Tropical Punch (Rp. 25.000)</option>
+    </select></th>
+    </tr> 
+    <th>Jumlah Minuman</th>    
+    <th><input type="number" id="jumlah_minuman"  value="0" onchange="total()"></th>
+    </tr>
+    <th>Dessert</th>
+    <th><select id="Dessert" onchange="total()">
+        <option value="Fruity Cola">Fruity Cola (Rp. 15.000)</option>
+        <option value="Triple Choco">Triple Choco (Rp. 15.900)</option>
+    </select></th>
+    </tr> 
+    <th>Jumlah Dessert</th>    
+    <th><input type="number" id="jumlah_Dessert"  value="0" onchange="total()"></th>
+    </tr>
+	<th>Combox</th>
+    <th><select id="Combox" onchange="total()">
+        <option value="Fun Box">Fun Box (Rp. 350.000)</option>
+        <option value="Triple Box">Triple Box (Rp. 250.000)</option>
+        <option value="Big Box">Big Box (Rp. 200.000)</option>
+        <option value="Double Box Regular">Double Box Regular (Rp. 150.000)</option>
+		<option value="Double Box Large">Double Box Large (Rp. 180.000)</option>
+    </select></th>
+    </tr> 
+    <th>Jumlah Combox</th>    
+    <th><input type="number" id="jumlah_combox"  value="0" onchange="total()"></th>
+    </tr>
+    <tr>    
+    <th>Jumlah total</th>
+    <th><input type="text" style="background: yellow" id="total" disabled></th>
+    </tr>
+
+    <tr>    
+    <th>Pembayaran</th>    
+    <th><input type="number" id="bayar" onchange="total()"></th>
+    </tr>
+   
+    <tr>    
+    <th>Kembalian</th>
+    <th><input type="text" style="background: yellow" id="total1" disabled></th>
+    </tr>
+          
+    <tr>
+    <th><input type="button" style="background: white"  onclick="window.print()" value="CETAK"></th>
+    </tr>      
+
+	</table>
+
+	<script type="text/javascript">
+  
+    function total() {
+    var id              = parseInt(document.getElementById('id').value);
+    var nama            = document.getElementById('nama').value;
+    var status_pembeli  = document.querySelector('input[name = status_pembeli]:checked').value;
+    var Pizza            = document.getElementById('Pizza').value;
+    var jumlah_order     = parseInt(document.getElementById('jumlah_order').value);
+	var Pasta_Rice          = document.getElementById('Pasta & Rice').value;
+    var jumlah_order     = parseInt(document.getElementById('jumlah_order').value);
+    var Drinks         = document.getElementById('Drinks').value;
+    var jumlah_minuman  = parseInt(document.getElementById('jumlah_minuman').value);
+	var Dessert        = document.getElementById('Dessert').value;
+    var jumlah_Dessert  = parseInt(document.getElementById('jumlah_Dessert').value);
+	var Combox        = document.getElementById('combox').value;
+    var jumlah_combox  = parseInt(document.getElementById('jumlah_Combox').value);
+
+        if (Pizza == "Super Supreme") {
+            harga_Pizza = 100000;
+        } else if (Pizza == "Frankfruerter BBQ") {
+            harga_Pizza = 110000;
+        } else if (Pizza == "Pepperoni") {
+            harga_Pizza = 105000;
+        } else if(Pizza == "Meat Lovers"){
+            harga_Pizza = 120000;
+        } else if(Pizza == "American Favourite"){
+           harga_Pizza = 99000;
+        }
+		
+		if (Pasta & Rice == "Black Pepper Beef") {
+            harga_Pasta & Rice = 48000;
+        } else if (Pasta & Rice == "Creamy Beef") {
+            harga_Pasta & Rice = 45000;
+        } else if (Pasta & Rice == "Tuna Aglio Olio") {
+            harga_Pasta & Rice = 52000;
+        } else if(Pasta & Rice == "Oriental Chicken Spaghetti"){
+            harga_Pasta & Rice = 50000;
+        } else if(Pasta & Rice == "Chicken Maryland Rice"){
+           harga_Pasta & Rice = 60000;
+        } else if(Pasta & Rice == "Thai Chicken Rice"){
+           harga_Pasta & Rice = 58000;
+		} else if(Pasta & Rice == "Black Pepper Chicken Rice"){
+           harga_Pasta & Rice = 55000;
+
+        if (status_pembeli == 'Member') {
+            if (jumlah_lauk == 1) {
+                diskon = harga_lauk * 0.05;
+            } else if (jumlah_lauk <= 3) {
+                diskon = harga_lauk * 0.07;
+            } else {
+                diskon = harga_lauk * 0.1;
+            }
+        } else if(status_pembeli == 'Non Member'){
+            if (jumlah_lauk <= 3) {
+                diskon = 0;
+            } else if (jumlah_lauk <= 5) {
+                diskon = (harga_lauk * jumlah_lauk) * 0.05;
+            } else {
+                diskon = harga_lauk * 0.05;
+            }
+        }
+
+        if (Drinks == "Avocado Juice") {
+              harga_Drinks = 28000;
+        } else if (Drinks == "Green Tea Yakult") {
+              harga_Drinks = 22000;
+        } else if (Drinks == "Mocha Float") {
+              harga_Drinks = 22000;
+        } else if (Drinks == "Tropical Punch") {
+              harga_Drinks = 25000;
+        } else if (Dessert == "Fruity Cola") {
+              harga_Dessert = 15000;
+        } else if (Dessert == "Triple Choco") {
+              harga_Dessert = 15900;
+        } else if (Combox == "Fun Box") {
+              harga_Combox = 350000;
+        } else if (Combox == "Triple Box") {
+              harga_Combox = 250000;
+		} else if (Combox == "Big Box") {
+              harga_Combox = 200000;
+		} else if (Combox == "Double Box Regular") {
+              harga_Combox = 150000;
+		} else if (Combox == "Double Box Large") {
+              harga_Combox = 180000;
+		}
+		
+    var pembayaran      = parseInt(document.getElementById('bayar').value);
+    var jumlah_harga    = (harga_Pizza * jumlah_order) + (harga_Pasta & Rice * jumlah_order) + (harga_Drinks* jumlah_minuman) + (harga_Dessert * jumlah_Dessert) + (harga_Combox * jumlah_Combox)- diskon;
+    document.getElementById('total').value = jumlah_harga;
+
+    var kembali = pembayaran - jumlah_harga;
+    document.getElementById('total1').value = kembali;
+  
+   var cetak  = "Id Pembeli    : "+id+"</br>"+
+              "Nama           : "+nama+"</br>" +
+              "Status Pembeli : "+status_pembeli+"</br>"+
+              "Nama Order Pizza  : "+Pizza+"</br>"+
+              "Jumlah Order   : "+jumlah_order+"</br>"+
+              "Nama Order Pasta_Rice  : "+Pasta_Rice+"</br>"+
+              "Jumlah Order   : "+jumlah_order+"</br>"+
+              "Nama Drinks  : "+Drinks+"</br>"+
+              "Jumlah Minuman : "+jumlah_minuman+"</br>"+
+			  "Nama Dessert  : "+Dessert+"</br>"+
+              "Jumlah Dessert : "+jumlah_Dessert+"</br>"+
+			  "Nama Combox  : "+Combox+"</br>"+
+              "Jumlah Minuman : "+jumlah_Combox+"</br>"+
+              "Jumlah_total  : "+jumlah_harga+"</br>"+
+              "pembayaran    : "+pembayaran+"</br>"+
+              "Kembalian     : "+kembali;
+    document.getElementById("cetak").innerHTML=cetak;
+  }
+  
+ </script>
+ </div>
+</body>
+
+ 

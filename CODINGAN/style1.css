@@ -1,0 +1,17 @@
+body{
+    background-color: azure;
+    text-align: center;
+}
+.konten{
+    width: 700px;
+    margin:auto;
+    background-color: blueviolet;
+    padding: 40px;
+    border: 6px solid black;
+}
+h6{
+    font-size: 30px;
+}
+p{
+    font-size: 20px;
+}

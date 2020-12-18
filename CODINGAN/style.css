@@ -1,0 +1,45 @@
+h2{
+    font-size: 50px;
+    text-align: center;
+    padding:20px;
+    margin-top: -10px;
+    border: 4px solid blue;
+    background-color: rgb(105, 107, 106);
+    position: fixed ;
+    width: 100%;
+}
+
+body{
+    background-color: rgb(47, 54, 54);
+    text-align: center;
+}
+.article{
+    width: 70%;
+    margin:auto;
+    background-color: rgb(105, 107, 106);
+    padding: 20px;
+    border: 4px solid blue;
+}
+.atas p{
+    font-size: 20px;
+
+}
+.topic .gambar{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.content h3{
+    font-size: 30px;
+    text-align: center;
+}
+.article .topic{
+    margin: auto;
+    background-color: rgb(143, 155, 155);
+    padding: 6px;  
+}
+.datadiri{
+    font-size: 40px;
+    background-color: rgb(199, 199, 192);
+    padding: 10px;
+}

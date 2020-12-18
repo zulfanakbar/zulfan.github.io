@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(193, 197, 197);
+}
+.container{
+    background-color: white;
+    display: flex;
+    width: 800px;
+    margin: 50px auto;
+}
+.sidebar-satu{
+    flex: 1;
+    padding: 10px;
+}
+main{
+    flex: 2;
+    padding: 10px;
+}
+.sidebar-dua{
+    flex: 1;
+    padding: 10px;
+}

@@ -1,0 +1,68 @@
+
+body {
+	background-image: url(background.png);
+	font: 16px/28px lucida bright, cambria;
+	background-color: #E9967A;
+	color: #2F4F4F;
+}
+
+.container {
+	width: 900px;
+	margin: auto;
+	background-color: red;
+}
+.header {
+	padding: 20px;
+	padding-bottom: 10px;
+}
+.header ,judul{
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.header ul li{
+	font-size: 20px;
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 4px;
+}
+
+
+.header a{
+	text-decoration: none;
+	color: sienna;
+	padding: 3px;
+}
+
+.header a:hover{
+	background-color: tan;
+	color: white;
+}
+
+.hero {
+	height: 900px;
+	background-image: url(pagepizza.png);
+	background-size: cover;
+	border-bottom: 5px sienna;
+	border-top: 5px sienna;
+
+}
+
+.content {
+	padding: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	font-size: 14px;
+}
+
+.footer {
+	background-color: peru;
+	padding:  1px;
+}
+.footer .copy {
+	color: tan;
+	text-align: center;
+	font-size: 14px;
+}
